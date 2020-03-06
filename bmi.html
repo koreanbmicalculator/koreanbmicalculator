@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="ko"><head><meta charset="utf-8"/>
+       
+    <title>BMI 계산기</title>
+
+		
+
+
+
+    <script type="text/javascript">
+
+        function computeBMI() {
+            // user inputs
+            var height = Number(document.getElementById("height").value);
+            
+            var weight = Number(document.getElementById("weight").value);
+
+
+            //Perform calculation
+
+            //        var BMI = weight /Math.pow(height, 2)*10000;
+            var BMI = Math.round(weight / Math.pow(height, 2) * 1000000)/100 ;
+
+            //Display result of calculation
+            document.getElementById("output").innerText = BMI;
+
+            var output = BMI
+            if (output < 18.5)
+                document.getElementById("comment").innerText = "저체중";
+            else if (output >= 18.5 && output < 25)
+                document.getElementById("comment").innerText = "정상";
+            else if (output >= 25 && output < 30)
+                document.getElementById("comment").innerText = "과체중";
+            else if (output >= 30 && output < 35)
+                document.getElementById("comment").innerText = "비만";
+            else if (output >= 35 && output < 40)
+                document.getElementById("comment").innerText = "고도비만";
+            else if (output >= 40)
+                document.getElementById("comment").innerText = "초고도비만";
+
+           var output = BMI 
+           if (height >= 159 && height < 204 && output < 14)
+                document.getElementById("result").innerText = "제2국민역";
+            else if (height >= 159 && height < 204 && output >= 14 && output < 17)
+                document.getElementById("result").innerText = "사회복무요원";
+            else if (height >= 159 && height < 204 && output >= 17 && output < 33)
+                document.getElementById("result").innerText = "현역";
+            else if (height >= 159 && height < 204 && output >= 33 && output < 50)
+                document.getElementById("result").innerText = "사회복무요원";
+            else if (height >= 159 && height < 204 && output >= 50)
+                document.getElementById("result").innerText = "제2국민역";
+            else if (height <= 140)
+                document.getElementById("result").innerText = "면제";
+            else if (height > 140 && height < 146)
+                document.getElementById("result").innerText = "제2국민역";
+            else if (height >= 146 && height < 159 && output < 14)
+                document.getElementById("result").innerText = "제2국민역";
+            else if (height >= 146 && height < 159 && output >= 50)
+                document.getElementById("result").innerText = "제2국민역";
+            else if (height >= 146 && height < 159 && output >= 14 && output < 50)
+                document.getElementById("result").innerText = "사회복무요원";
+            else if (height >= 204 && output < 14)
+                document.getElementById("result").innerText = "제2국민역";
+            else if (height >= 204 && output >= 50)
+                document.getElementById("result").innerText = "제2국민역";
+            else if (height >= 204 && output >= 14 && output < 50)
+                document.getElementById("result").innerText = "사회복무요원";
+
+
+            // document.getElementById("answer").value = output; 
+        }
+    </script>
+
+
+     
+		
+		</head>
+     <body>
+    <h1>BMI 계산기</h1>
+    <h1>키           : <input type="text" style="font-size : 30px; width: 100px; height: 30px;" id="height"/> cm</h1>
+         
+    <h1>몸무게: <input type="text" style="font-size : 30px; width: 100px; height: 30px;" id="weight"/> kg </h1>
+    
+
+
+<h1>BMI에 따른 병역 판정 검사 결과 보이기: 
+  <input type="checkbox" id="myCheck" style="font-size : 30px; width: 30px; height: 30px;" onclick="myFunction()"/></h1>
+
+
+    <input type="submit" id="button" style="font-size : 20px; width: 160px; height: 50px;" value="BMI 계산하기" onclick="computeBMI();"/>
+    <h1>당신의 BMI는 <span id="output">?</span>입니다.</h1>
+
+    <h2>당신은 <span id="comment"> ?</span>입니다. </h2>
+
+<h2><p id="text" style="display:none">당신은 <span id="result"> ?</span>입니다.   </p></h2>
+     
+
+
+
+    </body></html>
