@@ -84,6 +84,14 @@
 
 <h1>BMI에 따른 병역 판정 검사 결과 보이기: 
   <input type="checkbox" id="myCheck" style="font-size : 30px; width: 30px; height: 30px;" onclick="myFunction()"/></h1>
+	     
+	     
+<script>
+	function myFunction() {var checkBox = document.getElementById("myCheck");
+			       var text = document.getElementById("text");
+			       if (checkBox.checked == true){text.style.display = "block";} else {text.style.display = "none";}
+			      }
+	     </script>
 
 
     <input type="submit" id="button" style="font-size : 20px; width: 160px; height: 50px;" value="BMI 계산하기" onclick="computeBMI();"/>
